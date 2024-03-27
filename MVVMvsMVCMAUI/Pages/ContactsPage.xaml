@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMvsMVCMAUI.Pages.ContactsPage"
-             Title="Contacts">
+             Padding="20"
+             Title="Contactos">
     <ContentPage.ToolbarItems>
 
         <ToolbarItem
@@ -44,11 +45,12 @@
 
                         <HorizontalStackLayout
                             Spacing="12"
-                            Margin="10">
+                            Margin="6">
 
                             <Image
                                 VerticalOptions="CenterAndExpand"
-                                HeightRequest="80"
+                                HeightRequest="56"
+                                WidthRequest="56"
                                 Source="person_icon" />
 
                             <VerticalStackLayout
