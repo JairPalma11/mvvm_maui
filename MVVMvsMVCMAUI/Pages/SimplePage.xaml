@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMvsMVCMAUI.Pages.SimplePage"
+             Padding="20"
+             Title="Ejemplo MVVM">
+    <VerticalStackLayout Spacing="10">
+        <Entry
+            Text="{Binding Message}"
+            Placeholder="Escribe tu mensaje"/>
+        <Button
+            Text="Mostrar"
+            Command="{Binding DisplayCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

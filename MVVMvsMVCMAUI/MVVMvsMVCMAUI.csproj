@@ -79,9 +79,11 @@
 	  <None Remove="Resources\Images\fake_profile.png" />
 	  <None Remove="Resources\Images\calling_icon.svg" />
 	  <None Remove="Resources\Images\call_icon.svg" />
+	  <None Remove="ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
+	  <Folder Include="ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\info_icon.svg" />
