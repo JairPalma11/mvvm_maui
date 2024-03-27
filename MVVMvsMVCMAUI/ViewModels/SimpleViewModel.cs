@@ -33,12 +33,20 @@ namespace MVVMvsMVCMAUI.ViewModels
 
         public ICommand DisplayCommand { get; private set; }
 
+        public ICommand UpdateCommand { get; private set; }
+
         public SimpleViewModel()
         {
+            UpdateCommand = new Command(OnUpdateCommand);
             DisplayCommand = new Command(OnDisplayCommand);
         }
 
-        private void OnDisplayCommand(object obj)
+        private void OnUpdateCommand()
+        {
+            Message = "Se actulizo desde ViewModel";
+        }
+
+        private void OnDisplayCommand()
         {
             App.Current.MainPage.DisplayAlert("Tu mensaje es:", Message, "OK");
         }

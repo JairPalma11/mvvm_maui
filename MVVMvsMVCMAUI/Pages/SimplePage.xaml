@@ -11,5 +11,9 @@
         <Button
             Text="Mostrar"
             Command="{Binding DisplayCommand}" />
+        <Button
+            Text="Update"
+            Style="{StaticResource ButtonStyle3}"
+            Command="{Binding UpdateCommand}" />
     </VerticalStackLayout>
 </ContentPage>
