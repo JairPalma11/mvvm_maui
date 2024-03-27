@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMvsMVCMAUI.Pages.ContactDetailPage"
+             Padding="20"
+             Title="Detalle de contacto">
+    <VerticalStackLayout
+        Spacing="10">
+        <Entry
+            Keyboard="Plain"
+            x:Name="FirstName"
+            Placeholder="Nombre" />
+        <Entry
+            Keyboard="Plain"
+            x:Name="LastName"
+            Placeholder="Apellidos" />
+        <Entry
+            Keyboard="Email"
+            x:Name="Email"
+            Placeholder="Correo electronico" />
+        <Entry
+            MaxLength="11"
+            Keyboard="Telephone"
+            x:Name="Phone"
+            Placeholder="Telefono"/>
+
+        <Button
+            Margin="0, 20"
+            Clicked="OnSavedContact"
+            Text="Guardar" />
+    </VerticalStackLayout>
+</ContentPage>
