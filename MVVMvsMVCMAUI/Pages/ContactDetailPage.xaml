@@ -8,25 +8,24 @@
         Spacing="10">
         <Entry
             Keyboard="Plain"
-            x:Name="FirstName"
+            Text="{Binding FirstName}"
             Placeholder="Nombre" />
         <Entry
             Keyboard="Plain"
-            x:Name="LastName"
+            Text="{Binding LastName}"
             Placeholder="Apellidos" />
         <Entry
             Keyboard="Email"
-            x:Name="Email"
+            Text="{Binding Email}"
             Placeholder="Correo electronico" />
         <Entry
-            MaxLength="11"
             Keyboard="Telephone"
-            x:Name="Phone"
+            Text="{Binding Phone}"
             Placeholder="Telefono"/>
 
         <Button
             Margin="0, 20"
-            Clicked="OnSavedContact"
+            Command="{Binding SaveCommand}"
             Text="Guardar" />
     </VerticalStackLayout>
 </ContentPage>

@@ -3,19 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMvsMVCMAUI.Pages.ContactsPage"
              Padding="20"
+             x:Name="this"
+             xmlns:viewModels="clr-namespace:MVVMvsMVCMAUI.ViewModels"
              Title="Contactos">
     <ContentPage.ToolbarItems>
 
         <ToolbarItem
-            Clicked="OnAddContact"
+            Command="{Binding AddCommand}"
             Text="Nuevo" />
 
         <ToolbarItem
-            Clicked="OnTest"
+            Command="{Binding TestCommand}"
             Text="Test" />
 
     </ContentPage.ToolbarItems>
     <CollectionView
+        ItemsSource="{Binding Contacts}"
         SelectionMode="None"
         x:Name="collectionView">
 
@@ -28,15 +31,21 @@
                     <SwipeView>
 
                         <SwipeView.RightItems>
-
+                            <!-- En .NET MAUI para hacer referencia a otro Source es usando
+                            RelativeSource AncestorType, sin embargo,
+                            hay otra alternativa como se muestra en el segundo
+                            SwipeItem
+                            -->
                             <SwipeItem
-                                Clicked="OnDeleted"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:ContactsViewModel}}, Path=DeleteCommand}"
                                 CommandParameter="{Binding .}"
                                 BackgroundColor="Red"
                                 Text="Eliminar" />
-
+                            <!-- una forma sencilla de hacer referencia
+                            dentro de otro bindingContext es
+                            como se muestra aqui en la propiedad command -->
                             <SwipeItem
-                                Clicked="OnSelectContact"
+                                Command="{Binding Source={x:Reference this}, Path=BindingContext.UpdateCommand}"
                                 CommandParameter="{Binding .}"
                                 BackgroundColor="{StaticResource Primary}"
                                 Text="Actualizar" />
