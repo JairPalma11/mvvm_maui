@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVVMvsMVCMAUI.Pages.BMICalculatorPage"
+             Padding="20"
+             xmlns:converters="clr-namespace:MVVMvsMVCMAUI.Converters"
+             Title="Calculadora IMC">
+    <ContentPage.Resources>
+
+        <converters:BMICategoryConverter x:Key="BMICategoryConverter" />
+
+    </ContentPage.Resources>
+    <VerticalStackLayout
+        Spacing="12">
+        <Label
+            FontSize="Large"
+            Text="Calcula tu BMI"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Entry
+            Keyboard="Numeric"
+            Text="{Binding Mass, Mode=OneWayToSource}"
+            Placeholder="Ingresa tu peso en kilogramos." />
+
+        <Entry
+            Keyboard="Numeric"
+            Text="{Binding Height, Mode=OneWayToSource}"
+            Placeholder="Ingresa tu altura en Metros." />
+
+        <Button
+            Command="{Binding CalculateCommand}"
+            Text="Calcular" />
+
+        <Label
+            Margin="0, 20, 0, 0"
+            FontSize="Large"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Result, Mode=OneWay, Converter={StaticResource BMICategoryConverter}}" />
+    </VerticalStackLayout>
+</ContentPage>
