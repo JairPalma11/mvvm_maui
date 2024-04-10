@@ -3,7 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MVVMvsMVCMAUI.Pages.ContactDetailPage"
              Padding="20"
+             xmlns:behaviors="clr-namespace:MVVMvsMVCMAUI.Behaviors"
              Title="Detalle de contacto">
+    <ContentPage.Resources>
+
+        <behaviors:EmailValidatorBehavior x:Key="EmailValidatorBehavior" />
+        
+
+    </ContentPage.Resources>
     <VerticalStackLayout
         Spacing="10">
         <Entry
@@ -17,7 +24,15 @@
         <Entry
             Keyboard="Email"
             Text="{Binding Email}"
-            Placeholder="Correo electronico" />
+            Placeholder="Correo electronico">
+
+            <Entry.Behaviors>
+
+                <behaviors:EmailValidatorBehavior />
+
+            </Entry.Behaviors>
+
+        </Entry>
         <Entry
             Keyboard="Telephone"
             Text="{Binding Phone}"

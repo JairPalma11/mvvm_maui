@@ -81,11 +81,13 @@
 	  <None Remove="Resources\Images\call_icon.svg" />
 	  <None Remove="ViewModels\" />
 	  <None Remove="Converters\" />
+	  <None Remove="Behaviors\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Pages\" />
 	  <Folder Include="ViewModels\" />
 	  <Folder Include="Converters\" />
+	  <Folder Include="Behaviors\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\info_icon.svg" />
