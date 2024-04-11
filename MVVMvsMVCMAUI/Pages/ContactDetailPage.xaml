@@ -7,8 +7,40 @@
              Title="Detalle de contacto">
     <ContentPage.Resources>
 
-        <behaviors:EmailValidatorBehavior x:Key="EmailValidatorBehavior" />
-        
+        <!-- Puedes agregar un trigger a nivel estilo y
+        aplicarlo a todos los elementos en un solo lugar
+        -->
+
+        <Style TargetType="Entry">
+
+            <Style.Triggers>
+
+                <Trigger
+                    TargetType="Entry"
+                    Property="IsFocused"
+                    Value="True">
+
+                    <Setter Property="BackgroundColor" Value="#1B5E20" />
+                    <Setter Property="PlaceholderColor" Value="White" />
+                    <Setter Property="TextColor" Value="White" />
+
+                </Trigger>
+
+                <Trigger
+                    TargetType="Entry"
+                    Property="IsFocused"
+                    Value="False">
+
+                    <Setter Property="BackgroundColor" Value="Transparent" />
+                    <Setter Property="PlaceholderColor" Value="Gray" />
+                    <Setter Property="TextColor" Value="Black" />
+
+                </Trigger>
+
+            </Style.Triggers>
+
+        </Style>
+
 
     </ContentPage.Resources>
     <VerticalStackLayout
@@ -16,7 +48,35 @@
         <Entry
             Keyboard="Plain"
             Text="{Binding FirstName}"
-            Placeholder="Nombre" />
+            Placeholder="Nombre">
+
+            <Entry.Triggers>
+
+                <Trigger
+                    TargetType="Entry"
+                    Property="IsFocused"
+                    Value="True">
+
+                    <Setter Property="BackgroundColor" Value="#E65100" />
+                    <Setter Property="PlaceholderColor" Value="White" />
+                    <Setter Property="TextColor" Value="White" />
+
+                </Trigger>
+
+                <Trigger
+                    TargetType="Entry"
+                    Property="IsFocused"
+                    Value="False">
+
+                    <Setter Property="BackgroundColor" Value="Transparent" />
+                    <Setter Property="PlaceholderColor" Value="Gray" />
+                    <Setter Property="TextColor" Value="Black" />
+
+                </Trigger>
+
+            </Entry.Triggers>
+
+        </Entry>
         <Entry
             Keyboard="Plain"
             Text="{Binding LastName}"
